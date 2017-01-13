@@ -1,6 +1,6 @@
 # pierre
-bridge = ["pilar", "pilar", "pilar", "pilar", "pilar", "pilar"]
-dice = ["pilar melt", "go to bridge", "go to igloo"]
+bridge = [:pilar, :pilar, :pilar, :pilar, :pilar, :pilar]
+dice = [:pilar_melt, :go_to_bridge, :go_to_igloo]
 animals = [:fox, :bear, :rabbit, :pinguin]
 board = {
   ice_field: {
@@ -17,29 +17,41 @@ board = {
 # All animals are on first cell on start 
 board[:ice_field][:animals] = animals
 
-def ice_melt _bridge = bridge
+def pilar_melt bridge
   puts "Ice is melting"
-  _bridge.pop
+  bridge.pop
 end
 
 def roll dice
-  puts dice.sample
+  puts rolled = dice.sample
+  rolled
 end
 
 def bridge_fall
   puts "Bridge falls !"
 end
 
-def go_to_bridge animal, board
-  # remove animal from ice field
-  board[:ice_field][:animals].delete animal
+def go_to_bridge board
+  # chose an animal and remove it from ice field
+  return unless animal = board[:ice_field][:animals].pop
   # add animal to bridge
   board[:bridge][:animals].push animal
+  puts "#{animal} is now on bridge"
 end
 
-def go_to_igloo animal, board
-  # remove animal from ice field
-  board[:bridge][:animals].delete animal
+def go_to_igloo board
+  # chose an animal and remove it from bridge
+  return unless animal = board[:bridge][:animals].pop
   # add animal to bridge
   board[:igloo][:animals].push animal
+  puts "#{animal} is now safe in igloo"
+end
+
+#player_roll_dice
+3.times do
+  puts "Next player roll dice.\n..."
+  rolled = roll dice
+  pilar_melt bridge if rolled == :pilar_melt
+  go_to_bridge board if rolled == :go_to_bridge
+  go_to_igloo board if rolled == :go_to_igloo
 end
