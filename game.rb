@@ -36,3 +36,10 @@ def go_to_bridge animal, board
   # add animal to bridge
   board[:bridge][:animals].push animal
 end
+
+def go_to_igloo animal, board
+  # remove animal from ice field
+  board[:bridge][:animals].delete animal
+  # add animal to bridge
+  board[:igloo][:animals].push animal
+end
