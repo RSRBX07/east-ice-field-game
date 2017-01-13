@@ -9,6 +9,10 @@ def ice_melt bridge
   bridge.pop
 end
 
+def roll dice
+  dice.sample
+end
+
 def bridge_fall
   puts "Bridge falls !"
 end
