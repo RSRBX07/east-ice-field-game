@@ -4,6 +4,7 @@ dice = ["pilar melt", "go to bridge", "go to igloo"]
 animals = ["fox", "bear", "rabbit", "pinguin"]
 
 def ice_melt bridge
+  puts "La glace fond"
   bridge.pop
 end
 
