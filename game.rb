@@ -17,13 +17,14 @@ board = {
 # All animals are on first cell on start 
 board[:ice_field][:animals] = animals
 
-def pilar_melt _bridge = bridge
+def pilar_melt bridge
   puts "Ice is melting"
-  _bridge.pop
+  bridge.pop
 end
 
 def roll dice
-  dice.sample
+  puts rolled = dice.sample
+  rolled
 end
 
 def bridge_fall
@@ -35,6 +36,7 @@ def go_to_bridge board
   return unless animal = board[:ice_field][:animals].pop
   # add animal to bridge
   board[:bridge][:animals].push animal
+  puts "#{animal} is now on bridge"
 end
 
 def go_to_igloo board
@@ -42,12 +44,14 @@ def go_to_igloo board
   return unless animal = board[:bridge][:animals].pop
   # add animal to bridge
   board[:igloo][:animals].push animal
+  puts "#{animal} is now safe in igloo"
 end
 
-def player_roll_dice dice
+#player_roll_dice
+3.times do
   puts "Next player roll dice.\n..."
-  puts rolled = roll dice
-  pilar_melt if rolled == :pilar_melt
+  rolled = roll dice
+  pilar_melt bridge if rolled == :pilar_melt
+  go_to_bridge board if rolled == :go_to_bridge
+  go_to_igloo board if rolled == :go_to_igloo
 end
-
-player_roll_dice dice
