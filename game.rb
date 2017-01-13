@@ -17,6 +17,9 @@ board_cells = [
   }
 ]
 
+# All animals are on first cell on start 
+board_cells[0].animals = animals
+
 def ice_melt bridge
   puts "Ice is melting"
   bridge.pop
