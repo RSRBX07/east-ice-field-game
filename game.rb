@@ -49,7 +49,14 @@ end
 
 def players_win board
   if board[:ice_field][:animals].empty? && board[:bridge][:animals].empty?
-    puts "All animals are safe ! You all win."
+    puts "All animals are safe ! You all win. :-D"
+    exit
+  end
+end
+
+def players_loose bridge
+  if bridge.empty?
+    puts "Ice bridge is melt!!\nYou all loose! :-()"
     exit
   end
 end
@@ -61,4 +68,5 @@ end
   go_to_bridge board if rolled == :go_to_bridge
   go_to_igloo board if rolled == :go_to_igloo
   players_win board
+  players_loose bridge
 end
