@@ -1,37 +1,38 @@
 # pierre
 bridge = ["pilar", "pilar", "pilar", "pilar", "pilar", "pilar"]
 dice = ["pilar melt", "go to bridge", "go to igloo"]
-animals = ["fox", "bear", "rabbit", "pinguin"]
-board_cells = [
-  {
-    name: "ice field",
+animals = [:fox, :bear, :rabbit, :pinguin]
+board = {
+  ice_field: {
     animals: []
   },
-  {
-    name: "bridge",
+  bridge: {
     animals: []
   },
-  {
-    name: "igloo",
+  igloo: {
     animals: []
   }
-]
+}
 
 # All animals are on first cell on start 
-board_cells[0].animals = animals
+board[:ice_field][:animals] = animals
 
-def ice_melt bridge
+def ice_melt _bridge = bridge
   puts "Ice is melting"
-  bridge.pop
+  _bridge.pop
 end
 
 def roll dice
-  dice.sample
+  puts dice.sample
 end
 
 def bridge_fall
   puts "Bridge falls !"
 end
-# bob
 
-#j
+def go_to_bridge animal, board
+  # remove animal from ice field
+  board[:ice_field][:animals].delete animal
+  # add animal to bridge
+  board[:bridge][:animals].push animal
+end
