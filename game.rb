@@ -6,6 +6,10 @@ animals = ["fox", "bear", "rabbit", "pinguin"]
 def ice_melt
   bridge.pop
 end
+
+def bridge_fall
+  puts "Le pont s'ecroule."
+end
 # bob
 
 #j
