@@ -30,16 +30,16 @@ def bridge_fall
   puts "Bridge falls !"
 end
 
-def go_to_bridge animal, board
-  # remove animal from ice field
-  board[:ice_field][:animals].delete animal
+def go_to_bridge board
+  # chose an animal and remove it from ice field
+  return unless animal = board[:ice_field][:animals].pop
   # add animal to bridge
   board[:bridge][:animals].push animal
 end
 
-def go_to_igloo animal, board
-  # remove animal from ice field
-  board[:bridge][:animals].delete animal
+def go_to_igloo board
+  # chose an animal and remove it from bridge
+  return unless animal = board[:bridge][:animals].pop
   # add animal to bridge
   board[:igloo][:animals].push animal
 end
