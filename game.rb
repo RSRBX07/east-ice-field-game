@@ -2,7 +2,20 @@
 bridge = ["pilar", "pilar", "pilar", "pilar", "pilar", "pilar"]
 dice = ["pilar melt", "go to bridge", "go to igloo"]
 animals = ["fox", "bear", "rabbit", "pinguin"]
-board = ["ice field", "bridge","igloo"]
+board_cells = [
+  {
+    name: "ice field",
+    animals: []
+  },
+  {
+    name: "bridge",
+    animals: []
+  },
+  {
+    name: "igloo",
+    animals: []
+  }
+]
 
 def ice_melt bridge
   puts "Ice is melting"
