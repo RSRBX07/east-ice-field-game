@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170126203918) do
+ActiveRecord::Schema.define(version: 20170126204135) do
+
+  create_table "crows", force: :cascade do |t|
+    t.integer  "advancement", default: 0
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
 
   create_table "dices", force: :cascade do |t|
     t.string   "showing_face"

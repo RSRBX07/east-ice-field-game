@@ -1,0 +1,2 @@
+class Crow < ApplicationRecord
+end
