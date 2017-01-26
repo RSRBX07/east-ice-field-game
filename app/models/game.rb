@@ -7,6 +7,19 @@ class Game < ApplicationRecord
 
   before_create :setup_game
 
+  def roll_dice
+    dice.roll
+    case dice.showing_face
+    when :crow
+      crow.step
+    when :basket
+      orchard.pick_fruit
+    else
+      color = dice.showing_face
+      orchard.pick_fruit color
+    end
+  end
+
   private
 
   def setup_game
