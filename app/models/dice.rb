@@ -3,12 +3,14 @@ class Dice < ApplicationRecord
 
   before_create :roll
 
-  def faces
-    Game::COLORS + [:crow, :basket]
-  end
-
   def roll
     self.showing_face = faces.sample
+  end
+
+  private
+
+  def faces
+    Game::COLORS + [:crow, :basket]
   end
 
 end
