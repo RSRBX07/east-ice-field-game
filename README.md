@@ -1,7 +1,24 @@
-# east-ice-field-game
+# README
 
-Game of cooperation
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-Following [these](http://www.djeco.com/data/rules/DJ08555_FR.pdf) rules.
+Things you may want to cover:
 
-Made with love @ Roubaix
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
