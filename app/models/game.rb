@@ -1,4 +1,5 @@
 class Game < ApplicationRecord
+  COLORS = [:red, :yellow, :blue, :green]
   has_one :orchard
   has_one :dice
   has_one :crow
