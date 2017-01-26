@@ -7,6 +7,13 @@ class Game < ApplicationRecord
 
   before_create :setup_game
 
+  # private
+
+  def status
+    "Crow advancement is #{crow.advancement}/6
+    There are #{fruits.on_tree.count} fruits left in orchard."
+  end
+
   def roll_dice
     dice.roll
     case dice.showing_face
@@ -19,8 +26,6 @@ class Game < ApplicationRecord
       orchard.pick_fruit color
     end
   end
-
-  private
 
   def setup_game
     self.orchard ||= Orchard.new
