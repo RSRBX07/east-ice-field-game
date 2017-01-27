@@ -1,2 +1,12 @@
-<h1>Games#show</h1>
-<p>Find me in app/views/games/show.html.erb</p>
+<h1>Games <%=@game.id%></h1>
+
+<h2>Fruits</h2>
+<%@game.fruits.each do |fruit|%>
+  <div class="fruit-<%=fruit.color%>"></div>
+<%end%>
+
+<h2>Dé</h2>
+<p>Dernier tirage : <%=@game.dice.showing_face%></p>
+
+<h2>Corbeau</h2>
+<p>Avancement : <%=@game.crow.advancement%></p>
