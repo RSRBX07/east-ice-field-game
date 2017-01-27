@@ -1,6 +1,7 @@
 // Place all the styles related to the games controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 .red{
   width: 40px;
   height: 40px;
@@ -26,5 +27,11 @@
   width: 40px;
   height: 40px;
   background-color: yellow;
+  border: 1px solid black ;
+}
+
+.White{
+  width: 40px;
+  height: 40px;
   border: 1px solid black ;
 }
