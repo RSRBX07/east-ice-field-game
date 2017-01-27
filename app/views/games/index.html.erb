@@ -1,2 +1,11 @@
-<h1>Games#index</h1>
+<h1>Jeu du corbeau</h1>
+
+<%=link_to "Play" %>
+
+<% @games.each do |game| %>
+      <div>
+        <%=link_to "play test", game %>
+      </div>
+<% end %>
+
 <p>Find me in app/views/games/index.html.erb</p>
