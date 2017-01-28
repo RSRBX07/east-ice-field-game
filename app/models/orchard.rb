@@ -19,6 +19,7 @@ class Orchard < ApplicationRecord
     Game::COLORS.each do |color|
       4.times {fruits << Fruit.new(color: color)}
     end
+    fruits
   end
 
   def fruits_count
