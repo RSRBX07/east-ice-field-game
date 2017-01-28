@@ -1,6 +1,8 @@
 class Orchard < ApplicationRecord
   has_many :fruits
   belongs_to :game
+  
+  validates_numericality_of  :fruits_count, equal_to: 16, on: :save
 
   before_create :add_fruits
 
@@ -19,6 +21,9 @@ class Orchard < ApplicationRecord
     end
   end
 
+  def fruits_count
+    self.fruits.count
+  end
 
   def fruits_of_color color_or_nil
     self.fruits.of_color color_or_nil
