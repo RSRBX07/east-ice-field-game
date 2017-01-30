@@ -6,13 +6,14 @@ class FruitsController < ApplicationController
       redirect_to game_path(fruit.game)
     else
       redirect_to game_path(fruit.game), notice: "Fail to record croped fruit. #{fruit.error.messages}"
+    end
 
   end
 
   private
 
-  def fruit_params
+  # def fruit_params
 
-    params
-  end
+  #   params
+  # end
 end
