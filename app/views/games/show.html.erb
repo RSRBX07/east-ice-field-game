@@ -3,7 +3,9 @@
 <h2>Fruits</h2>
 <%@game.fruits.on_tree.each do |fruit|%>
   <div class="fruit-<%=fruit.color%>"></div>
+  <container>
   <%= button_to "crop", crop_fruit_path %>
+  </container>
 <%end%>
 
 <h2>Dé</h2>
