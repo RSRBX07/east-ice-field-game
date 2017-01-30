@@ -1,0 +1,3 @@
+<div class="dice-<%= @game.dice.showing_face %>"></div>
+<p>Dernier tirage : <%= @game.dice.showing_face %></p>
+<%= button_to "Lancez le Dé", roll_dice_path %>
