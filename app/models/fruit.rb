@@ -1,6 +1,8 @@
 class Fruit < ApplicationRecord
   belongs_to :orchard
 
+  delegate :game, to: :orchard
+
   def self.on_tree
     self.where croped_at: nil
   end

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  post 'crop/:id', to: 'fruits#crop', as: 'crop_fruit'
+
   root 'games#index'
 
   get 'games/show'
