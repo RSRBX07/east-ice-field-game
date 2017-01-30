@@ -1,7 +1,7 @@
 <h1>Games <%=@game.id%></h1>
 
 <h2>Fruits</h2>
-<%@game.fruits.each do |fruit|%>
+<%@game.fruits.on_tree.each do |fruit|%>
   <div class="fruit-<%=fruit.color%>"></div>
 <%end%>
 
