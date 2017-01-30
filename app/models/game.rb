@@ -3,6 +3,7 @@ class Game < ApplicationRecord
   has_one :orchard
   has_one :dice
   has_one :crow
+  has_one :rules
   has_many :fruits, through: :orchard
 
   before_create :setup_game
@@ -27,9 +28,11 @@ class Game < ApplicationRecord
     end
   end
 
+
   def setup_game
     self.orchard ||= Orchard.new
     self.dice ||= Dice.new
     self.crow ||= Crow.new
+    self.rules ||= Rules.new
   end
 end

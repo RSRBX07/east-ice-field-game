@@ -9,6 +9,13 @@
 <div class="dice-<%=@game.dice.showing_face%>"></div>
 <p>Dernier tirage : <%=@game.dice.showing_face%></p>
 <%= button_to "Lancez le Dé", roll_dice_path %>
+<%= button_to "Faites avancer le corbeau", crow_move_to_path %>
+<div class="notice">
+  <% if notice %>
+    <p><%= notice %></p>
+  <% end %>
+</div>
 
 <h2>Corbeau</h2>
+<p>Mouvements possibles : <%= @game.rules.crow_allowed_moves%>
 <p>Avancement : <%=@game.crow.advancement%></p>
