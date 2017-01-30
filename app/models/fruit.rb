@@ -14,6 +14,6 @@ class Fruit < ApplicationRecord
   end
 
   def crop
-    self.update croped_at: DateTime.now
+    self.croped_at = DateTime.now
   end
 end
