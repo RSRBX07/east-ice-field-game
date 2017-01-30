@@ -13,6 +13,6 @@ Rails.application.routes.draw do
 
   post 'crow/:id', to: 'crow#step', as: 'step_crow'
   
-  post 'fruit/:id', to: 'fruit#crop', as: 'crop_fruit'
+  post 'crop/:id', to: 'fruits#crop', as: 'crop_fruit'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

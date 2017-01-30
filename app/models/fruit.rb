@@ -1,6 +1,10 @@
 class Fruit < ApplicationRecord
   belongs_to :orchard
 
+  def game
+    orchard.game
+  end
+
   def self.on_tree
     self.where croped_at: nil
   end
