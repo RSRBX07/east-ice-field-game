@@ -10,10 +10,31 @@
     <%=button_to "Nouvel partir", new_game_path %>
   </div>
   
-  <% @games.each do |game| %>
-    <div>
-      <%=link_to "Partir en cours", game %>
-    </div>
-  <% end %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Partir</th>
+        <th>Fruits</th>
+        <th>Dé</th>
+        <th>Corbeau</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @games.each do |game| %>
+      <tr>
+        <th><%=link_to "Partir en cours", game %></th>
+        <th><%= game.fruits.on_tree.count %></th>
+        <th><%= game.dice.showing_face %></th>
+        <th><%= game.crow.advancement %></th>
+      </tr>
+      <% end %>
+    </tbody>
+
+  </table>
 
 </div>
+
+
+
+        
