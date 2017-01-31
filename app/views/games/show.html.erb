@@ -1,15 +1,19 @@
 <h1>Games <%= @game.id %></h1>
 
 <h2>Fruits</h2>
-<% @game.fruits.on_tree.each do |fruit| %>
-  <div class="fruit-<%=fruit.color%>">
-    <%= button_to "x", crop_fruit_path(fruit) %>
-  </div>
+<%@game.fruits.on_tree.each do |fruit|%>
+<div class="item">
+  <div class="<%=fruit.color%>"></div>
+<%= button_to "x", crop_fruit_path(fruit) %>
+</div>
 <% end %>
 
 <h2>Dé</h2>
-<div class="dice-<%= @game.dice.showing_face %>"></div>
-<p>Dernier tirage : <%= @game.dice.showing_face %></p>
+<div class="item">
+  <div class="<%=@game.dice.showing_face%>">
+  </div>
+</div>
+<p>Dernier tirage : <%=@game.dice.showing_face%></p>
 <%= button_to "Lancez le Dé", roll_dice_path %>
 
 <h2>Corbeau</h2>
