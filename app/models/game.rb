@@ -7,6 +7,16 @@ class Game < ApplicationRecord
 
   before_create :setup_game
 
+  #return Game::ActiveRecor_Relation 
+  #give games created at within last 7 days
+
+  def self.recent
+    start.range= 1.week.ago
+    stop.range=  Time.now
+    self.where created_at: [start_range..stop_range]
+  end  
+
+
   # private
 
   def status
