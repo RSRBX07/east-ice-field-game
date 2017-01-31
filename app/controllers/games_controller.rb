@@ -9,7 +9,11 @@ class GamesController < ApplicationController
       @game = Game.find params[:id]
       Game.find 45
    rescue
-     redirect_to root_path, notice: "le jeu 45  n'existe pas'"  
+     redirect_to root_path, notice: "le jeu 45  n'existe pas'" # ou bien ecrire cela: 
+     
+     # alert: "le jeu #{params[:id]}n'existe pas"
+     # notice: "vous avez ete rederiger vers l'acceuil du jeu"
+     # mais modifier sur application.html.erb comme suite : 
    end 
   end
 end
