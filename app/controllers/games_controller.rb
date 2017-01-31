@@ -1,10 +1,13 @@
 class GamesController < ApplicationController
   def index
-    @games = Game.all
+    @games = Game.recent
   end
 
   def new
-    game = Game.create
+    @game = Game.new
+  end
+
+  def create
     game.save
     redirect_to game_path id: Game.last.id
   end
