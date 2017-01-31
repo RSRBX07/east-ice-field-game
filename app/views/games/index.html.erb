@@ -2,9 +2,17 @@
 
   <h1>Jeu du corbeau</h1>
 
+  <% if notice.present? %>
+    <p id=notice ><%= notice %></p>
+  <% end %>
+
+  <div>
+    <%=button_to "Nouvel partir", new_game_path %>
+  </div>
+  
   <% @games.each do |game| %>
     <div>
-      <%=link_to "Nouvel partir", game %>
+      <%=link_to "Partir en cours", game %>
     </div>
   <% end %>
 

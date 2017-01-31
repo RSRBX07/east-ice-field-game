@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   get 'games/:id', to: 'games#show', as: 'game'
 
+  post 'games', to: 'games#new', as: 'new_game'
+
   post 'dice/:id', to: 'dice#roll', as: 'roll_dice'
 
   post 'crow/:id', to: 'crow#step', as: 'step_crow'
