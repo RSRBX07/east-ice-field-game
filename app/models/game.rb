@@ -7,6 +7,10 @@ class Game < ApplicationRecord
 
   before_create :setup_game
 
+  def self.recent
+    self.where created_at: [1.hour.ago..Time.now]
+  end
+
   # private
 
   def status
