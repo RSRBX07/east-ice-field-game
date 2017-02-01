@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <h1>Games <%=@game.id%></h1> 
 <div class = "bouton<%= button_to "We win", game_win_path(@game.id) %>">
 </div>
@@ -6,13 +6,13 @@
 <br>
 <%= button_to "We loose", game_loose_path(@game.id) %>
  
-=======
+
 <h1><%= t('.name') + @game.id%></h1> 
 <%= button_to "We win", game_win_path(@game.id) %>
 <%= button_to "We loose", loose_path %>
->>>>>>> dadef15d13f76b6806048293e98e42f3ba579cb4
 
-<h2>Fruits</h2>
+
+<h2>< %= t('Fruits')% ></h2>
 
 <%= render @game.fruits.on_tree %>
 
