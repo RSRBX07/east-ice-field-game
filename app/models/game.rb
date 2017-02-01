@@ -12,7 +12,11 @@ class Game < ApplicationRecord
   def self.recent
     start_range = 1.week.ago
     stop_range = Time.now
-    self.where created_at: [start_range..stop_range]
+    self.where(created_at: [start_range..stop_range]).limit 25
+  end
+
+  def self.second_page
+    self.offset 25
   end
 
   # private
