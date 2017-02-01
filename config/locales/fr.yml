@@ -1,0 +1,12 @@
+fr:
+  games:
+    index:
+      title: "Jeu du corbeau"
+      new_game: "Nouvel partie"
+      game_progress: "Jeu en cours"
+      fruits: "Fruits" 
+      dice: "Dé"
+      crow: "Corbeau"
+      game: "Partir"
+
+    show:

@@ -1,27 +1,27 @@
-<h1>Jeu du corbeau</h1>
+<h1><%= t(".title") %></h1>
 
 <% if notice.present? %>
   <p id=notice ><%= notice %></p>
 <% end %>
 
 <div>
-  <%=button_to "Nouvel partir", new_game_path %>
+  <%=button_to t(".new_game"), new_game_path %>
 </div>
 
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Partir en cours</th>
-      <th>Fruits</th>
-      <th>Dé</th>
-      <th>Corbeau</th>
+      <th><%= t(".game_progress") %></th>
+      <th><%= t(".fruits") %></th>
+      <th><%= t(".dice") %></th>
+      <th><%= t(".crow") %></th>
     </tr>
   </thead>
 
   <tbody>
     <% @games.each do |game| %>
     <tr>
-      <th><%=link_to "Partir #{game.id}", game %></th>
+      <th><%=link_to t(".game")+" "+"#{game.id}", game %></th>
       <th><%= game.fruits.on_tree.count %></th>
       <th><%= game.dice.showing_face %></th>
       <th><%= game.crow.advancement %></th>

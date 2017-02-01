@@ -20,4 +20,14 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  games:
+    index:
+      title: "Game of the Raven"
+      new_game: "New game"
+      game_progress: "Game in progress"
+      fruits: "Fruits" 
+      dice: "Dice"
+      crow: "Raven"
+      game: "Game"
+
+    show:
