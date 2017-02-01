@@ -4,7 +4,7 @@
 
 
 .fruits {
-  font-size: 1rem;
+  font-size: 0.9rem;
   margin-left: 2rem;
   margin-right: 2.5rem;
   margin-bottom: 5.5rem;
@@ -13,7 +13,7 @@
 }
 
 .dice {
-  font-size: 1rem;
+  font-size: 0.9rem;
   margin-left: 2rem;
   margin-right: 2rem;
   margin-bottom: 6.5rem;
@@ -135,11 +135,20 @@
 }
 
 .basket {
-	width: 100px;
-	height: 115px;
-	position:absolute;
+	// width: 100px;
+	// height: 115px;
+	position: relative;
 	top: 0px;
 	left: 0px;
+}
+
+.fruits_basket {
+  font-size: 0.9rem;
+  margin-left: 0rem;
+  margin-right: 0rem;
+  margin-bottom: 5rem;
+  position: relative;
+  display: inline-block;
 }
 
 .base {
@@ -147,9 +156,10 @@ background: linear-gradient(135deg, #b25208 5px, #000000 5px, #000000 6px, trans
 	linear-gradient(225deg, #b25208 5px, #000000 5px, #000000 6px, transparent 6px, transparent 15px, #000000 15px, #000000 16px, transparent 16px)0 15px;
 	background-color:#b25208;
  background-size: 15px 30px;
-	width: 100px;
-	height: 50px;
-	position: absolute;
+	width: 60px;
+	height: 40px;
+	position: relative;
 	bottom: 0;
   border-radius: 5px 5px 50% 50%;
-}
+  margin-top: 3.5rem;
+ }

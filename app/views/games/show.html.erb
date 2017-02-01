@@ -29,12 +29,12 @@
 
 <div class="row">
   <h2>Panier</h2>
+  <div class="basket">
     <%@game.fruits.on_basket.each do |fruit|%>
-    <div class="fruits">
-      <div class="basket">
-        <div class="<%=fruit.color%>"></div>
-        <div class="base"></div>
-      </div>
+    <div class="fruits_basket">
+      <div class="<%=fruit.color%>"></div>
+      <div class="base"></div>
+    </div>
   <% end %>
   </div>
- </div>
+</div>
