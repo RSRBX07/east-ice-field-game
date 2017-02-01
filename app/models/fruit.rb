@@ -3,7 +3,7 @@ class Fruit < ApplicationRecord
 
   delegate :game, to: :orchard
 
-  default_scope { self.without_orchard_id }
+  # default_scope { self.without_orchard_id }
 
   def self.on_tree
     self.where croped_at: nil
