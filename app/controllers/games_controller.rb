@@ -4,7 +4,11 @@ class GamesController < ApplicationController
   end
 
   def show
+    begin
     @game = Game.find params[:id]
+    rescue
+      redirect_to games_path, flash: {notice: "on ne peut pas trouver le jeu #{params[:id]}"}
+    end
   end
 
   def win
