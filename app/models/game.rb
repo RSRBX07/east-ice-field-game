@@ -44,4 +44,10 @@ class Game < ApplicationRecord
     self.dice ||= Dice.new
     self.crow ||= Crow.new
   end
+
+  def set_status_to_win
+    self.status = :win
+  end
+
 end
+
