@@ -4,9 +4,9 @@
 
 <div class="row">
   <h2>Fruits</h2>
-  <%@game.fruits.on_tree.each do |fruit|%>
+  <% @game.fruits.on_tree.each do |fruit| %>
   <div class="fruits">
-    <div class="<%=fruit.color%>"></div>
+    <div class="<%= fruit.color %>"></div>
     <%= button_to "x", crop_fruit_path(fruit) %>
   </div>
   <% end %>
@@ -15,24 +15,27 @@
 <div class="row">
   <h2>Dé</h2>
   <div class="dice">
-    <div class="<%=@game.dice.showing_face%>"></div>
+    <div class="<%= @game.dice.showing_face %>"></div>
   </div>
-  <p>Dernier tirage : <%=@game.dice.showing_face%></p>
+  <p>Dernier tirage : <%= @game.dice.showing_face %></p>
   <%= button_to "Lancez le Dé", roll_dice_path %>
 </div>
 
 <div class="row">
   <h2>Corbeau</h2>
-  <p>Avancement : <%= @game.crow.advancement %></p>
+  <div class="col-xs-offset-<%= @game.crow.advancement * 2 %> ">
+    <%= render 'crow' %>
+  </div>
+  
   <%= button_to "Avancez le Corbeau", step_crow_path %>
 </div>
 
 <div class="row">
   <h2>Panier</h2>
   <div class="basket">
-    <%@game.fruits.on_basket.each do |fruit|%>
+    <% @game.fruits.on_basket.each do |fruit| %>
     <div class="fruits_basket">
-      <div class="<%=fruit.color%>"></div>
+      <div class="<%= fruit.color %>"></div>
       <div class="base"></div>
     </div>
   <% end %>
