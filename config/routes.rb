@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   post 'crow/:id', to: 'crow#step', as: 'crow_step'
 
   post 'games/:id/win', to: 'games#win', as: 'game_win'
-  post 'loose', to: 'games#loose'
+  
+  post 'games/:id/loose', to: 'games#loose', as: 'game_loose'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -24,6 +24,11 @@ class Game < ApplicationRecord
     self.finished_at = DateTime.now
   end
 
+  def loose_game
+    self.status = :loose
+    self.finished_at = DateTime.now
+  end
+
   # private
 
   def status
