@@ -5,6 +5,20 @@ class Fruit < ApplicationRecord
     self.where croped_at: nil
   end
 
+
+  def self.on_basket
+   self.where.not(croped_at: nil)
+   end     
+
+  def self.order_by_crop
+   self.order :croped_at
+  end 
+
+  def self.order_by_color
+   self.order :color
+  end  
+
+
   # Return an ActiveRecord::Relation
   # if nil is passed as color, it is treated as any
   # color (it does not scope).

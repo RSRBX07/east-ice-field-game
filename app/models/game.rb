@@ -5,6 +5,12 @@ class Game < ApplicationRecord
   has_one :crow
   has_many :fruits, through: :orchard
 
+  #return Game::ActiveRecor_Relation
+  def self.order_by_last_recently_played
+    self.order :updated_at, :desc
+
+  end
+
   before_create :setup_game
 
   #return Game::ActiveRecor_Relation 

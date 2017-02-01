@@ -6,8 +6,9 @@
   <%#<%= button_to "crop fruits",fruits_crop_path %>
 
 
- <%= render @game.fruits.on_tree %> 
-
+ <%#<%= render @game.fruits.on_tree %>
+ <%#<%= render @game.fruits.on_tree.order_by_crop  ranger par crop%>
+ <%= render @game.fruits.on_tree.order_by_color %> 
 
 <h2>Dé</h2>
 <%#<div class="dice-<%=@game.dice.showing_face"></div>
@@ -24,5 +25,6 @@
 
 
 <%= render @game.crow, crow:@game.crow %>
+
 
 
