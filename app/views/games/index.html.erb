@@ -1,8 +1,8 @@
-<h1>Jeu du corbeau</h1>
+<h1><%= t(".title") %></h1>
 
 <% @games.each do |game| %>
       <div>
-        <%=link_to "play test", game %>
+        <%=link_to t(".name") + " #{game.id}", game %>
       </div>
 <% end %>
 
