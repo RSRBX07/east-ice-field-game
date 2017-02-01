@@ -8,7 +8,7 @@ class Game < ApplicationRecord
   before_create :setup_game
 
   def self.recent
-    self.where created_at: [1.hour.ago..Time.now]
+    self.where(created_at: [1.day.ago..Time.now]).limit 20
   end
 
   # private
