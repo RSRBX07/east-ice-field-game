@@ -11,7 +11,7 @@ class GamesController < ApplicationController
     #recherche du jeu
     game = Game.find params[:id]
     #gagner le jeu
-    game.set_status_to_win
+    game.win
     game.save!
     #sauvegarder le jeu
     

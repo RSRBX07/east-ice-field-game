@@ -18,6 +18,11 @@ class Game < ApplicationRecord
   def self.second_page
     self.offset 25
   end
+  
+  def win
+    self.status = :win
+    self.finished_at = DateTime.now
+  end
 
   # private
 
@@ -45,9 +50,7 @@ class Game < ApplicationRecord
     self.crow ||= Crow.new
   end
 
-  def set_status_to_win
-    self.status = :win
-  end
+
 
 end
 
