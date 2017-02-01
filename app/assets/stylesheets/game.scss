@@ -1,46 +1,62 @@
-.item{
-  font-size: 0.5rem;
-  margin: 1.5rem;
+.row {
+  z-index: 10;
+}
+
+
+.fruits {
+  font-size: 1rem;
+  margin-left: 2rem;
+  margin-right: 2.5rem;
+  margin-bottom: 5.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.dice {
+  font-size: 1rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-bottom: 6.5rem;
   position: relative;
   display: inline-block;
 }
 
 .red {
-  width:6em;
-  height:5em;
+  width: 6em;
+  height: 5em;
   background-color:  #ff4355;
   box-shadow: inset 0.2em -0.2em  #cc1022;
   border-radius: 2em 2em 3em 3em;
-  position:absolute;
+  position: absolute;
   top: 1em;
-  left:0.3em;
+  left: 0.3em;
 }
 
 .red:before {
-  top:-.2em;
-  left:1.8em;
-  content:"";
-  width:4.1em;
-  height:2.75em;
+  top: -.2em;
+  left: 1.8em;
+  content: "";
+  width: 4.1em;
+  height: 2.75em;
   background-color: inherit;
   border-radius: 3em 3em 0 0 ;
   position: absolute;
-  box-shadow:-1.5em 0 0   #ff4355, inset .2em 0.2em  #ff4355;
+  box-shadow: -1.5em 0 0   #ff4355, inset .2em 0.2em  #ff4355;
 }
 
 .red:after{
-  content:"";
+  content: "";
   width: 0.2em;
   height: 1em;
   background-color:brown;
-  position:absolute;
+  position: absolute;
   z-index: 2;
   top: -0.5em;
   left: 3em;
 }
 
 .yellow {
-  width:5.4em;
+  width: 5.4em;
   height: 5.4em;
   margin-top: 1.2em;
   background-color: #d7c322;
@@ -52,11 +68,11 @@
 }
 
 .yellow:after{
-  content:"";
+  content: "";
   width: 0.2em;
   height: 1em;
   background-color:brown;
-  position:absolute;
+  position: absolute;
   z-index: 2;
   top: -0.2em;
   left: 5.1em;
@@ -65,10 +81,10 @@
 
 .blue {
   position: absolute;
-  width:6em;
+  width: 6em;
   height: 5.5em;
   top: 0.6em;
-  left:0.4em;
+  left: 0.4em;
   border-radius: 50%;
   background-color: #89a2ca;
   box-shadow: inset 0.2em -.2em  #6081B8;
@@ -81,39 +97,59 @@
   left: 2em;
   position: absolute;
   background-color: #3e4d64;
-  border-radius:50%;
+  border-radius: 50%;
 }
 
 .green {
-  width:6em;
-  height:5em;
+  width: 6em;
+  height: 5em;
   background-color:  rgb(41,154,11);
   box-shadow: inset 0.2em -0.2em  rgb(41,154,11);
   border-radius: 2em 2em 3em 3em;
-  position:absolute;
+  position: absolute;
   top: 1em;
-  left:0.3em;
+  left: 0.3em;
 }
 
 .green:before {
-  top:-.2em;
-  left:1.8em;
-  content:"";
-  width:4.1em;
-  height:2.75em;
+  top: -.2em;
+  left: 1.8em;
+  content: "";
+  width: 4.1em;
+  height: 2.75em;
   background-color: inherit;
   border-radius: 3em 3em 0 0 ;
   position: absolute;
-  box-shadow:-1.5em 0 0   rgb(41,154,11), inset .2em 0.2em  rgb(41,154,11);
+  box-shadow: -1.5em 0 0   rgb(41,154,11), inset .2em 0.2em  rgb(41,154,11);
 }
 
 .green:after{
-  content:"";
+  content: "";
   width: 0.2em;
   height: 1em;
   background-color:brown;
-  position:absolute;
+  position: absolute;
   z-index: 2;
   top: -0.5em;
   left: 3em;
+}
+
+.basket {
+	width: 100px;
+	height: 115px;
+	position:absolute;
+	top: 0px;
+	left: 0px;
+}
+
+.base {
+background: linear-gradient(135deg, #b25208 5px, #000000 5px, #000000 6px, transparent 6px, transparent 15px, #000000 15px, #000000 16px, transparent 16px),
+	linear-gradient(225deg, #b25208 5px, #000000 5px, #000000 6px, transparent 6px, transparent 15px, #000000 15px, #000000 16px, transparent 16px)0 15px;
+	background-color:#b25208;
+ background-size: 15px 30px;
+	width: 100px;
+	height: 50px;
+	position: absolute;
+	bottom: 0;
+  border-radius: 5px 5px 50% 50%;
 }

@@ -22,6 +22,7 @@ body {
   animation: cloudmove1 55s infinite;
   position: absolute;
   opacity: .7;
+  z-index: 2
 }
 
 @-webkit-keyframes cloudmove1 {
@@ -108,7 +109,7 @@ body {
     border-radius: 50px;
     background: white;
     position :absolute;
-    z-index: -1;
+    z-index: 1;
     margin: 15px;
 }
 
@@ -118,7 +119,7 @@ body {
     border-radius: 50px;
     background: white;
     position :absolute;
-    z-index: -2;
+    z-index: 2;
     margin: 45px;
 }
 
@@ -128,12 +129,10 @@ body {
     border-radius: 45px;
     background: white;
     position :absolute;
-    z-index: -3;
+    z-index: 3;
     margin: 0px;
     top: 50px;
 }
-
-
 
 
 
