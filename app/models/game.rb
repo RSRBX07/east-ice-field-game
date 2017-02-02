@@ -4,8 +4,13 @@ class Game < ApplicationRecord
   has_one :dice
   has_one :crow
   has_many :fruits, through: :orchard
+  has_and_belongs_to_many :users
 
   before_create :setup_game
+
+  def self.of_user user
+    user.games
+  end
 
   # return Game::ActiveRecord_Relation
   # give games created at within last 7 days

@@ -3,6 +3,15 @@ fr:
   games:
     index:
       title: "Liste des jeux"
+<<<<<<< HEAD
       name: "Jeu magnifique!!"
   
   
+=======
+      name: "Jeu du corbeau"
+    show:
+      name: "Jeu du corbeau"
+  activerecord:
+    exceptions:
+      not_found: "Objet non trouvé"
+>>>>>>> 34278536e8cd4add59f6c2dff1ebc7fbbd68d27c
