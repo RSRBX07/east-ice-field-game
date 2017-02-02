@@ -4,3 +4,8 @@ fr:
     index:
       title: "Liste des jeux"
       name: "Jeu du corbeau"
+    show:
+      name: "Jeu du corbeau"
+  activerecord:
+    exceptions:
+      not_found: "Objet non trouvé"
