@@ -4,7 +4,13 @@ class GamesController < ApplicationController
   end
 
   def show
-    @game = Game.find params[:id]
+    begin
+      @game = Game.find(params[:id])
+    rescue ActiveRecord::RecordNotFound => err
+      puts "I m starting rescue"
+      redirect_to root_path, notice: t(:not_found, scope: [:activerecord, :exceptions])
+      puts "I've finished rescue"
+    end
   end
 
   def win
