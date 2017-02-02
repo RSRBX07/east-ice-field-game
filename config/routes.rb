@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
   resources :users
-  get '/signup', to: "users#new"  # controller: :users, action: :new  
-  get ':id/profile', to: "users#show" #,  as: user
+  get 'signup', to: "users#new"  # controller: :users, action: :new  
+  get 'profile/:id', to: "users#show" #,  as: user
   post 'crop/:id', to: 'fruits#crop', as: 'crop_fruit'
 
   root 'games#index'
