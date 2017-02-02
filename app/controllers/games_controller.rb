@@ -20,4 +20,18 @@ class GamesController < ApplicationController
     end
   end
 
+  def set_status_to_win
+    game = Game.find params[:id]
+    game.status = "win"
+    game.save
+    redirect_to root_path
+  end
+
+  def set_status_to_lost
+    game = Game.find params[:id]
+    game.status = "loose"
+    game.save
+    redirect_to root_path
+  end
+
 end

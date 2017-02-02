@@ -7,6 +7,8 @@ fr:
       fruits: "Fruits" 
       dice: "Dé"
       crow: "Corbeau"
+      basket: "Panier"
+      status: "Statut"
       game: "Partie"
 
     show:
@@ -17,3 +19,5 @@ fr:
       crow: "Corbeau"
       button_crow: "Avancez le Corbeau"
       basket: "Panier"
+      win: "Gagner"
+      loose: "Perdu"

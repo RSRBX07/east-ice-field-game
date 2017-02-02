@@ -13,10 +13,10 @@ class Game < ApplicationRecord
 
   # private
 
-  def status
-    "Crow advancement is #{crow.advancement}/6
-    There are #{fruits.on_tree.count} fruits left in orchard."
-  end
+  # def status
+  #   "Crow advancement is #{crow.advancement}/6
+  #   There are #{fruits.on_tree.count} fruits left in orchard."
+  # end
 
   def roll_dice
     dice.roll

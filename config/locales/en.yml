@@ -28,6 +28,8 @@ en:
       fruits: "Fruits" 
       dice: "Dice"
       crow: "Raven"
+      basket: "Basket"
+      status: "Status"
       game: "Game"
 
     show:
@@ -38,3 +40,5 @@ en:
       crow: "Raven"
       button_crow: "Move the Crow"
       basket: "Basket"
+      win: "Win"
+      loose: "loose"

@@ -1,5 +1,6 @@
 <div class="row">
   <h1><%= t(".title")+" "+"#{@game.id}" %></h1>
+  <h2>Status : <%= @game.status %></h2>
 </div>
 
 <div class="row">
@@ -38,5 +39,12 @@
       <div class="base"></div>
     </div>
   <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div>
+    <%= button_to t(".win"), games_win_path %>
+    <%= button_to t(".loose"), games_lost_path %>
   </div>
 </div>
