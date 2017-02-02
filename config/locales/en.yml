@@ -31,3 +31,10 @@ en:
       game: "Game"
 
     show:
+      title: "Game of the Raven"
+      fruits: "Fruits" 
+      dice: "Dice"
+      button_dice: "Start the Dice"
+      crow: "Raven"
+      button_crow: "Move the Crow"
+      basket: "Basket"

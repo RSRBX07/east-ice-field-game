@@ -7,6 +7,13 @@ fr:
       fruits: "Fruits" 
       dice: "Dé"
       crow: "Corbeau"
-      game: "Partir"
+      game: "Partie"
 
     show:
+      title: "Jeu du corbeau"
+      fruits: "Fruits" 
+      dice: "Dé"
+      button_dice: "Lancez le Dé"
+      crow: "Corbeau"
+      button_crow: "Avancez le Corbeau"
+      basket: "Panier"
