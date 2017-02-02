@@ -165,11 +165,20 @@ background: linear-gradient(135deg, #b25208 5px, #000000 5px, #000000 6px, trans
  }
 
 .crow {
-  margin-left: 2rem;
+  margin-left: 3rem;
   margin-right: 2.5rem;
-  margin-bottom: 1.5rem;
   position: relative;
   display: inline-block;
+}
+
+hr {
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+#flag {
+  color: #ffffff;
+  margin-top: -20px;
 }
 
 .view_crow {
