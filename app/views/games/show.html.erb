@@ -16,14 +16,20 @@
 <div class="row">
   <h2><%= t(".dice") %></h2>
   <div class="dice">
+    <% if @game.dice.showing_face == "crow" %>
+      <%= render 'crow' %>
+    <% elsif @game.dice.showing_face == "basket" %>
+      <%= render 'basket' %>
+    <% else %>
     <div class="<%= @game.dice.showing_face %>"></div>
+    <% end %>
   </div>
   <%= button_to t(".button_dice"), roll_dice_path %>
 </div>
 
 <div class="row">
   <h2><%= t(".crow") %></h2>
-  <div class="col-xs-offset-<%= @game.crow.advancement * 1 %> ">
+  <div class="col-xs-offset-<%= @game.crow.advancement * 2 %> ">
     <%= render 'crow' %>
   </div>
   <i id=flag class="fa fa-flag-o fa-2x pull-left" aria-hidden="true"></i>
