@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   resources :users
+  get '/signup', to: "users#new"  # controller: :users, action: :new  
+  get ':id/profile', to: "users#show" #,  as: user
   post 'crop/:id', to: 'fruits#crop', as: 'crop_fruit'
 
   root 'games#index'
@@ -16,4 +18,4 @@ Rails.application.routes.draw do
   post 'games/:id/win', to: 'games#win', as: 'game_win'
   post 'loose', to: 'games#loose'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-end
+  end
