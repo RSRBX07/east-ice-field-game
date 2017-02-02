@@ -5,4 +5,8 @@ class ApplicationController < ActionController::Base
   def set_i18n_locale
     I18n.locale = :fr
   end
+
+  def current_user
+    User.last
+  end
 end

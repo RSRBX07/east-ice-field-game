@@ -8,6 +8,10 @@ class Game < ApplicationRecord
 
   before_create :setup_game
 
+  def self.of_user user
+    user.games
+  end
+
   # return Game::ActiveRecord_Relation
   # give games created at within last 7 days
   def self.recent
