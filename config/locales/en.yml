@@ -20,4 +20,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  hello: "hello world"
+  games:
+    index:
+      title: "games list"
+      name: "crow game"
