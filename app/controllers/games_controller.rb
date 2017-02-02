@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
   def index
-    @games = Game.recent.second_page
+    @games = Game.all
   end
 
   def show
