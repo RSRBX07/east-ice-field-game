@@ -25,13 +25,16 @@ class GamesController < ApplicationController
     end
   
   end
-   def crop
-    fruit = Fruit.find fruit_params[:id]
-    fruit.crop
-    if fruit.save
-      redirect_to game_path(fruit.game)
-    else
-      redirect_to game_path(fruit.game), notice: "#{fruit.error.messages}"
+  
+  def crop
+    fruit = Fruit.find fruit_params[:id]    
+    if showing_face == fruit.color
+      fruit.crop
+      if fruit.save
+        redirect_to game_path(fruit.game)
+      else
+        redirect_to game_path(fruit.game), notice: "#{fruit.error.messages}"
+      end
     end
   end
 
