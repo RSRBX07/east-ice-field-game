@@ -40,14 +40,17 @@ class GamesController < ApplicationController
 
   def step
     crow = @game.crow
-    if crow.game.last_player_action != "step"
-      crow.step
-      if crow.save
-        # mise à jour de l'action : pour controller l'avancement du crow, il faut connaitre la derniere action du jeu
-       set_last_player_action
-        redirect_to game_path
-      else
-        redirect_to game_path, notice: "#{crow.errors.messages}"
+    if crow.game.dice.showing_face != "crow"
+    else
+      if crow.game.last_player_action != "step"
+        crow.step
+        if crow.save
+          # mise à jour de l'action : pour controller l'avancement du crow, il faut connaitre la derniere action du jeu
+        set_last_player_action
+          redirect_to game_path
+        else
+          redirect_to game_path, notice: "#{crow.errors.messages}"
+        end
       end
     end
   end

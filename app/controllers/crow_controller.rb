@@ -1,4 +1,3 @@
 class CrowController < ApplicationController
-  
-  
+
 end
