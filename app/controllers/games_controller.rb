@@ -8,8 +8,9 @@ class GamesController < ApplicationController
   end
 
   def create
+    game = Game.new
     game.save
-    redirect_to game_path id: Game.last.id
+    redirect_to game_path id: game.id
   end
 
   def show
