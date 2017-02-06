@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170202130815) do
+ActiveRecord::Schema.define(version: 20170206112438) do
 
   create_table "crows", force: :cascade do |t|
     t.integer  "advancement", default: 0
@@ -35,10 +35,11 @@ ActiveRecord::Schema.define(version: 20170202130815) do
   end
 
   create_table "games", force: :cascade do |t|
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.datetime "finished_at"
     t.string   "status"
+    t.string   "last_player_action"
   end
 
   create_table "games_users", force: :cascade do |t|
