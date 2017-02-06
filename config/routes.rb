@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   post 'dice/:id', to: 'dice#roll', as: 'roll_dice'
 
 
-  post 'crow/:id', to: 'crow#step', as: 'step_crow'
+  post 'crow/:id/step', to: 'crow#step', as: 'step_crow'
 
   post 'games/:id/win', to: 'games#win', as: 'game_win'
 
