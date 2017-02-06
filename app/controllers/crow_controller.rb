@@ -1,4 +1,5 @@
 class CrowController < ApplicationController
+  
   def step
     crow = Crow.find params[:id]
     crow.step
@@ -9,9 +10,4 @@ class CrowController < ApplicationController
     end
   end
 
-  private
-
-  def step_params
-    params.permit :id
-  end
 end

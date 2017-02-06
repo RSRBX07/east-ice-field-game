@@ -1,4 +1,5 @@
 class FruitsController < ApplicationController
+
   def crop
     fruit = Fruit.find fruit_params[:id]
     fruit.crop

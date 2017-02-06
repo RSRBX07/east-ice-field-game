@@ -3,11 +3,11 @@ class Fruit < ApplicationRecord
 
   delegate :game, to: :orchard
 
-  # default_scope { self.without_orchard_id }
 
   def self.on_tree
     self.where croped_at: nil
   end
+
 
   # fruits = Fruit.on_basket
   def self.on_basket
@@ -16,10 +16,6 @@ class Fruit < ApplicationRecord
 
   def self.by_croped_at
     self.order :croped_at
-  end
-
-  def self.without_orchard_id
-    self.select :color, :croped_at
   end
 
   # Return an ActiveRecord::Relation

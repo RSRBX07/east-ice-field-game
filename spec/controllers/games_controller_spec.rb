@@ -2,16 +2,16 @@ require 'rails_helper'
 
 RSpec.describe GamesController, type: :controller do
 
-  describe "GET #index" do
+  describe "GET #new" do
     it "returns http success" do
-      get :index
+      get :new
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe "GET #show" do
+  describe "GET #create" do
     it "returns http success" do
-      get :show
+      get :create
       expect(response).to have_http_status(:success)
     end
   end

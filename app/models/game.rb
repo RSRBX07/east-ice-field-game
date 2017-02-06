@@ -8,6 +8,11 @@ class Game < ApplicationRecord
 
   before_create :setup_game
 
+
+  def self.recent
+    self.where(created_at: [1.day.ago..Time.now]).limit 20
+  end
+
   def self.of_user user
     user.games
   end
@@ -31,10 +36,10 @@ class Game < ApplicationRecord
 
   # private
 
-  def status
-    "Crow advancement is #{crow.advancement}/6
-    There are #{fruits.on_tree.count} fruits left in orchard."
-  end
+  # def status
+  #   "Crow advancement is #{crow.advancement}/6
+  #   There are #{fruits.on_tree.count} fruits left in orchard."
+  # end
 
   def roll_dice
     dice.roll

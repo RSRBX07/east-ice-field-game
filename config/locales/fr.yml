@@ -1,11 +1,26 @@
 fr:
-  hello: "Bonjour le monde"
   games:
     index:
-      title: "Liste des jeux"
-      name: "Jeu du corbeau"
+      title: "Jeu du corbeau"
+      new_game: "Nouvel partie"
+      game_progress: "Jeu en cours"
+      fruits: "Fruits" 
+      dice: "Dé"
+      crow: "Corbeau"
+      basket: "Panier"
+      status: "Statut"
+      game: "Partie"
+
     show:
-      name: "Jeu du corbeau"
+      title: "Jeu du corbeau"
+      fruits: "Fruits" 
+      dice: "Dé"
+      button_dice: "Lancez le Dé"
+      crow: "Corbeau"
+      button_crow: "Avancez le Corbeau"
+      basket: "Panier"
+      win: "Gagner"
+      loose: "Perdu"
   activerecord:
     exceptions:
       not_found: "Objet non trouvé"

@@ -1,6 +1,15 @@
 class GamesController < ApplicationController
   def index
-    @games = Game.of_user(current_user).recent
+    @games = Game.recent
+  end
+
+  def new
+    @game = Game.new
+  end
+
+  def create
+    game.save
+    redirect_to game_path id: Game.last.id
   end
 
   def show
@@ -23,4 +32,12 @@ class GamesController < ApplicationController
     
     redirect_to  root_path
   end
+
+  def loose
+    game = Game.find params[:id]
+    game.status = "loose"
+    game.save
+    redirect_to root_path
+  end
+
 end
