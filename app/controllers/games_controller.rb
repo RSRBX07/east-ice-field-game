@@ -28,7 +28,7 @@ class GamesController < ApplicationController
   
   def crop
     fruit = Fruit.find fruit_params[:id]    
-    if showing_face == fruit.color
+    if fruit.game.dice.showing_face == fruit.color
       fruit.crop
       if fruit.save
         redirect_to game_path(fruit.game)
