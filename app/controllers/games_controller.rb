@@ -40,7 +40,7 @@ class GamesController < ApplicationController
 
   def step
     crow = @game.crow
-    if dice.value != "crow"
+    if crow.game.dice.showing_face != "crow"
     else
       if crow.game.last_player_action != "step"
         crow.step
