@@ -1,5 +1,6 @@
 class FruitsController < ApplicationController
-   def crop
+
+  def crop
     fruit = Fruit.find fruit_params[:id]
     fruit.crop
     if fruit.save
@@ -15,4 +16,3 @@ class FruitsController < ApplicationController
     params.permit :id
   end
 end
-

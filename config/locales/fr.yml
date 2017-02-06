@@ -21,3 +21,6 @@ fr:
       basket: "Panier"
       win: "Gagner"
       loose: "Perdu"
+  activerecord:
+    exceptions:
+      not_found: "Objet non trouvé"

@@ -3,6 +3,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def set_i18n_locale
-    I18n.locale = :en
+    I18n.locale = :fr
+  end
+
+  def current_user
+    User.last
   end
 end

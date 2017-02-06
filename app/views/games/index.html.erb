@@ -1,7 +1,14 @@
 <h1><%= t(".title") %></h1>
 
+
 <% if notice.present? %>
   <p id=notice ><%= notice %></p>
+<% end %>
+
+<% @games.each do |game| %>
+      <div>
+        <%=link_to t(".name") + " #{game.id}", game %>
+      </div>
 <% end %>
 
 <div>

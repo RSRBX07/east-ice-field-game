@@ -41,10 +41,25 @@ ActiveRecord::Schema.define(version: 20170201102436) do
     t.string   "status"
   end
 
+  create_table "games_users", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "game_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "orchards", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "game_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "nick"
+    t.string   "firstname"
+    t.string   "lastname"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
