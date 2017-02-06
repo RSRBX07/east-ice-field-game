@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :users
   get 'signup', to: "users#new"  # controller: :users, action: :new  
   get 'profile/:id', to: "users#show" #,  as: user
-  post 'crop/:id', to: 'fruits#crop', as: 'crop_fruit'
+  post 'crop/:id', to: 'games#crop', as: 'crop_fruit'
 
 
   root 'games#index'
@@ -17,10 +17,10 @@ Rails.application.routes.draw do
 
   get 'games/:id', to: 'games#show', as: 'game'
 
-  post 'dice/:id', to: 'dice#roll', as: 'roll_dice'
+  post 'dice/:id', to: 'games#roll', as: 'roll_dice'
 
 
-  post 'crow/:id/step', to: 'crow#step', as: 'step_crow'
+  post 'crow/:id/step', to: 'games#step', as: 'step_crow'
 
   post 'games/:id/win', to: 'games#win', as: 'game_win'
 
@@ -28,7 +28,7 @@ Rails.application.routes.draw do
 
 
 
-  post 'crow/:id', to: 'crow#step', as: 'crow_step'
+
 
   
 
