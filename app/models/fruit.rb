@@ -3,7 +3,6 @@ class Fruit < ApplicationRecord
 
   delegate :game, to: :orchard
 
-
   def self.on_tree
     self.where croped_at: nil
   end
@@ -28,5 +27,6 @@ class Fruit < ApplicationRecord
 
   def crop
     self.croped_at = DateTime.now
+    self
   end
 end
