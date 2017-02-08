@@ -18,18 +18,18 @@ class GamesController < ApplicationController
   def show
     begin
       @game = Game.find(params[:id])
+      puts "got game"
     rescue ActiveRecord::RecordNotFound => err
       puts "I m starting rescue"
       redirect_to root_path, notice: t(:not_found, scope: [:activerecord, :exceptions])
       puts "I've finished rescue"
     end
-  
+    puts "leaving games#show"
   end
   
   def crop
-    fruit = Fruit.find fruit_params[:fruit_id]
-    if (Game::COLORS + [:basket]).include? fruit.game.dice.showing_face ||
-      fruit.game.last_player_action != "crop"
+    fruit = Fruit.find params[:fruit_id]
+    if  @game.allow_crop?(fruit)
       fruit.crop
       if fruit.save
         set_last_player_action
@@ -37,6 +37,8 @@ class GamesController < ApplicationController
       else
         redirect_to game_path(fruit.game), notice: "#{fruit.errors.messages}"
       end
+    else
+       redirect_to game_path(fruit.game), notice: "cueillette interdite"
     end
   end
 
@@ -86,10 +88,7 @@ class GamesController < ApplicationController
   def set_last_player_action
    @game.last_player_action = action_name
    @game.save
-  end
-
-  def fruit_params
-    params.select {|params_element| params_element.fist == "fruit_id"}
+   puts "last_player_action set to #{@game.last_player_action}"
   end
 
   def set_game

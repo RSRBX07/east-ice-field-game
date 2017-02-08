@@ -4,11 +4,7 @@ class Dice < ApplicationRecord
   before_create :roll
 
   def roll
-    self.showing_face = faces.sample
-  end
-
-  def showing_face
-    super.to_sym
+    self.showing_face = faces.sample.to_s
   end
 
   private

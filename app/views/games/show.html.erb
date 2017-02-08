@@ -1,3 +1,4 @@
+<p><%= notice %></p>
 <div class="row">
   <h1><%= t(".title")+" "+"#{@game.id}" %></h1>
   <h2>Status : <%= @game.status %></h2>
@@ -8,7 +9,7 @@
   <% @game.fruits.on_tree.each do |fruit| %>
   <div class="fruits">
     <div class="<%= fruit.color %>"></div>
-    <%= button_to "x", crop_fruit_path(fruit) %>
+    <%= button_to "x", crop_fruit_path(@game, fruit) %>
   </div>
   <% end %>
 </div>
