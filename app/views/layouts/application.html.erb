@@ -15,6 +15,9 @@
     <div class="container">
       <%= render "background" %>
       <div class="game-interface">
+        <%= link_to root_path do %>
+          <span class="glyphicon glyphicon-home" aria-hidden="true">
+      <% end  %>
         <%= yield %>
       </div>
       
