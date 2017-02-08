@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-  before_action :set_game, :only =>[:step, :roll, :win, :loose]
+  before_action :set_game, :only =>[:crop, :step, :roll, :win, :loose]
 
   def index
     @games = Game.recent
@@ -27,13 +27,15 @@ class GamesController < ApplicationController
   end
   
   def crop
-    fruit = Fruit.find fruit_params[:id]    
-    if fruit.game.dice.showing_face == fruit.color
+    fruit = Fruit.find fruit_params[:fruit_id]
+    if (Game::COLORS + [:basket]).include? fruit.game.dice.showing_face ||
+      fruit.game.last_player_action != "crop"
       fruit.crop
       if fruit.save
+        set_last_player_action
         redirect_to game_path(fruit.game)
       else
-        redirect_to game_path(fruit.game), notice: "#{fruit.error.messages}"
+        redirect_to game_path(fruit.game), notice: "#{fruit.errors.messages}"
       end
     end
   end
@@ -46,7 +48,7 @@ class GamesController < ApplicationController
         crow.step
         if crow.save
           # mise à jour de l'action : pour controller l'avancement du crow, il faut connaitre la derniere action du jeu
-        set_last_player_action
+          set_last_player_action
           redirect_to game_path
         else
           redirect_to game_path, notice: "#{crow.errors.messages}"
@@ -87,7 +89,7 @@ class GamesController < ApplicationController
   end
 
   def fruit_params
-    params.permit :id
+    params.select {|params_element| params_element.fist == "fruit_id"}
   end
 
   def set_game

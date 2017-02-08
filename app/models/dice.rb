@@ -7,6 +7,10 @@ class Dice < ApplicationRecord
     self.showing_face = faces.sample
   end
 
+  def showing_face
+    super.to_sym
+  end
+
   private
 
   def faces
