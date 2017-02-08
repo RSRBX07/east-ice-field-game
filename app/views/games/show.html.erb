@@ -1,0 +1,65 @@
+
+
+<p><%= notice %></p>
+
+<div class="row">
+  <h1><%= t(".title")+" "+"#{@game.id}" %></h1>
+  <h2>Status : <%= @game.status %></h2>
+</div>
+
+<div class="row">
+  <h2><%= t(".fruits") %></h2>
+  <% @game.fruits.on_tree.each do |fruit| %>
+  <div class="fruits">
+    <div class="<%= fruit.color %>"></div>
+    <%= button_to "x", crop_fruit_path(@game, fruit) %>
+  </div>
+  <% end %>
+</div>
+
+<div class="row">
+  <h2><%= t(".dice") %></h2>
+  <div class="idem">
+    <% if @game.dice.showing_face == "crow" %>
+      <%= render 'crow' %>
+    <% elsif @game.dice.showing_face == "basket" %>
+     <%= render 'basket' %>
+    <% else %>
+    <div id="fruits" class="<%= @game.dice.showing_face %>"></div>
+    <% end %>
+  </div>
+  <%= button_to t(".button_dice"), roll_dice_path %>
+</div>
+
+<div class="row">
+  <h2><%= t(".crow") %></h2>
+  <div class="col-xs-offset-<%= @game.crow.advancement * 2 %> ">
+    <div class="crow">
+      <%= render 'crow' %>
+    </div> 
+  </div>
+  <i id=flag class="fa fa-flag-o fa-2x pull-left" aria-hidden="true"></i>
+  <i id=flag class="fa fa-flag-checkered fa-2x pull-right" aria-hidden="true"></i>
+  <hr class="hr-dashed">
+  <%= button_to t(".button_crow"), step_crow_path %>
+</div>
+
+<div class="row">
+  <h2><%= t(".basket") %></h2>
+  <div class="basket">
+    <% @game.fruits.on_basket.each do |fruit| %>
+    <div class="fruits_basket">
+      <div class="<%= fruit.color %>"></div>
+      <div class="base"></div>
+    </div>
+  <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div>
+    <%= button_to t(".win"), game_win_path %>
+    <br>
+    <%= button_to t(".loose"), game_loose_path %>
+  </div>
+</div>

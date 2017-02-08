@@ -1,0 +1,47 @@
+
+<h1><%= t(".title") %></h1>
+
+
+<% if notice.present? %>
+  <p id=notice ><%= notice %></p>
+<% end %>
+
+<% @games.each do |game| %>
+      <div>
+        <%=link_to t(".name") + " #{game.id}", game %>
+      </div>
+<% end %>
+
+<div>
+  <%=button_to t(".new_game"), 'games/create' %>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= t(".game_progress") %></th>
+      <th><%= t(".fruits") %></th>
+      <th><%= t(".dice") %></th>
+      <th><%= t(".crow") %></th>
+      <th><%= t(".basket") %></th>
+      <th><%= t(".status") %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @games.each do |game| %>
+    <tr>
+      <th><%=link_to t(".game")+" "+"#{game.id}", game %></th>
+      <th><%= game.fruits.on_tree.count %></th>
+      <th><%= game.dice.showing_face %></th>
+      <th><%= game.crow.advancement %></th>
+      <th><%= game.fruits.on_basket.count %></th>
+      <th><%= game.status %></th>
+    </tr>
+    <% end %>
+  </tbody>
+
+</table>
+
+
+     

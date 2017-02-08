@@ -1,10 +1,10 @@
 class Dice < ApplicationRecord
   belongs_to :game
 
-  before_create :roll
+  after_initialize :roll
 
   def roll
-    self.showing_face = faces.sample
+    self.showing_face = faces.sample.to_s
   end
 
   private
