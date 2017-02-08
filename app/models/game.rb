@@ -28,6 +28,13 @@ class Game < ApplicationRecord
   def self.second_page
     self.offset 25
   end
+
+  def allow_crop? fruit
+    last_player_action != "crop" &&
+    dice.showing_face == fruit.color ||
+      dice.showing_face == "basket"
+      
+  end
   
   def win
     self.status = :win
