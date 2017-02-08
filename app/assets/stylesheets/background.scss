@@ -3,7 +3,10 @@ body {
   height: 1080px;
   overflow: hidden;
 }
-
+.game-interface{
+    z-index: 10;
+    position: relative;
+}
 
 .sand {
   background: #FFDEAA;
