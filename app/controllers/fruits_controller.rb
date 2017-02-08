@@ -1,7 +1,0 @@
-class FruitsController < ApplicationController
-
- 
-
-
-  
-end

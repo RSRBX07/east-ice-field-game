@@ -20,9 +20,7 @@ class GamesController < ApplicationController
       @game = Game.find(params[:id])
       puts "got game"
     rescue ActiveRecord::RecordNotFound => err
-      puts "I m starting rescue"
       redirect_to root_path, notice: t(:not_found, scope: [:activerecord, :exceptions])
-      puts "I've finished rescue"
     end
     puts "leaving games#show"
   end
