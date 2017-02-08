@@ -1,4 +1,7 @@
+<div class="game-interface">
+
 <p><%= notice %></p>
+
 <div class="row">
   <h1><%= t(".title")+" "+"#{@game.id}" %></h1>
   <h2>Status : <%= @game.status %></h2>
@@ -58,4 +61,5 @@
     <%= button_to t(".win"), game_win_path %>
     <%= button_to t(".loose"), game_loose_path %>
   </div>
+</div>
 </div>

@@ -4,7 +4,10 @@ body {
   overflow: hidden;
 }
 
-
+.game-interface{
+  z-index: 4;
+  position: absolute;
+}
 .sand {
   background: #FFDEAA;
   width: 100%;
