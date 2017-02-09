@@ -30,13 +30,13 @@ class Game < ApplicationRecord
   end
 
   def allow_crop? fruit
-    dice.showing_face == "basket" &&
-    dice.showing_face == fruit.color ||
+    (dice.showing_face == "basket" ||
+    dice.showing_face == fruit.color) &&
     last_player_action != "crop"
-   
-      
   end
-  
+  false &&
+  false ||
+  true
   def win
     self.status = :win
     self.finished_at = DateTime.now
