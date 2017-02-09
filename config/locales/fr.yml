@@ -2,7 +2,7 @@ fr:
   games:
     index:
       title: "Jeu du corbeau"
-      new_game: "Nouvel partie"
+      new_game: "Nouvelle partie"
       game_progress: "Jeu en cours"
       fruits: "Fruits" 
       dice: "Dé"

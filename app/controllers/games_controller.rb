@@ -31,12 +31,13 @@ class GamesController < ApplicationController
       fruit.crop
       if fruit.save
         set_last_player_action
-        redirect_to game_path(fruit.game)
+        redirect_to game_path(@game) if !@game.orchard.empty?
+        redirect_to game_win_path @game if @game.orchard.empty?
       else
-        redirect_to game_path(fruit.game), notice: "#{fruit.errors.messages}"
+        redirect_to game_path(@game), notice: "#{fruit.errors.messages}"
       end
     else
-       redirect_to game_path(fruit.game), notice: "cueillette interdite"
+       redirect_to game_path(@game), notice: "cueillette interdite"
     end
   end
 
@@ -49,7 +50,8 @@ class GamesController < ApplicationController
         if crow.save
           # mise à jour de l'action : pour controller l'avancement du crow, il faut connaitre la derniere action du jeu
           set_last_player_action
-          redirect_to game_path
+          redirect_to game_path if !crow.in_orchard?
+          redirect_to game_loose_path @game if crow.in_orchard?
         else
           redirect_to game_path, notice: "#{crow.errors.messages}"
         end

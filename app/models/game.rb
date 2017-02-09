@@ -30,9 +30,10 @@ class Game < ApplicationRecord
   end
 
   def allow_crop? fruit
-    last_player_action != "crop" &&
+    dice.showing_face == "basket" &&
     dice.showing_face == fruit.color ||
-      dice.showing_face == "basket"
+    last_player_action != "crop"
+   
       
   end
   
