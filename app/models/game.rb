@@ -29,6 +29,13 @@ class Game < ApplicationRecord
     self.offset 25
   end
 
+  def allow_roll?
+    return false if last_player_action == "roll" && (dice.showing_face == "crow" || dice.showing_face == "basket")
+    last_player_action != "roll" ||
+    # il n'ya plus de fruit de ca couleur de la face du dé
+    fruits.on_tree.of_color(dice.showing_face).count == 0
+  end
+
   def allow_crop? fruit
     (dice.showing_face == "basket" ||
     dice.showing_face == fruit.color) &&
