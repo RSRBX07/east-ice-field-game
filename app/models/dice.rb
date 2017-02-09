@@ -1,7 +1,7 @@
 class Dice < ApplicationRecord
   belongs_to :game
 
-  after_initialize :roll
+  # after_initialize :roll
 
   def roll
     self.showing_face = faces.sample.to_s
