@@ -1,5 +1,10 @@
 # GameHub (pedagogic repo)
 
+[![CircleCI](https://circleci.com/gh/RSRBX07/east-ice-field-game.svg?style=svg)](https://circleci.com/gh/RSRBX07/east-ice-field-game)
+[![Code Climate](https://codeclimate.com/github/RSRBX07/east-ice-field-game/badges/gpa.svg)](https://codeclimate.com/github/RSRBX07/east-ice-field-game)
+[![Test Coverage](https://codeclimate.com/github/RSRBX07/east-ice-field-game/badges/coverage.svg)](https://codeclimate.com/github/RSRBX07/east-ice-field-game/coverage)
+[![Issue Count](https://codeclimate.com/github/RSRBX07/east-ice-field-game/badges/issue_count.svg)](https://codeclimate.com/github/RSRBX07/east-ice-field-game)
+
 Let's create a game like [Mon Premier Verger](https://cdn.haba.de/medias/manual/4655-mes-mon-premier-verger-fiche-jeu-fr.pdf)
 
 

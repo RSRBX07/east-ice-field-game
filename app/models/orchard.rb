@@ -13,6 +13,11 @@ class Orchard < ApplicationRecord
     self.fruits.on_tree.of_color(color).sample.crop
   end
 
+  def empty?
+    puts "chek orchard empty and return #{fruits.on_tree == 0}"
+    fruits.on_tree.count == 0
+  end
+
   private
 
   def add_fruits
@@ -20,10 +25,6 @@ class Orchard < ApplicationRecord
       4.times {fruits << Fruit.new(color: color)}
     end
     fruits
-  end
-
-  def fruits_count
-    self.fruits.count
   end
 
   def fruits_of_color color_or_nil

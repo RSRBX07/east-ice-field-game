@@ -6,12 +6,6 @@
   <p id=notice ><%= notice %></p>
 <% end %>
 
-<% @games.each do |game| %>
-      <div>
-        <%=link_to t(".name") + " #{game.id}", game %>
-      </div>
-<% end %>
-
 <div>
   <%=button_to t(".new_game"), 'games/create' %>
 </div>
