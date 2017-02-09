@@ -12,8 +12,8 @@ Rails.application.routes.draw do
   post 'dice/:id', to: 'games#roll', as: 'roll_dice'
   post 'games/:id/fruits/:fruit_id/crop', to: 'games#crop', as: 'crop_fruit'
   post 'crow/:id/step', to: 'games#step', as: 'step_crow'
-  post 'games/:id/win', to: 'games#win', as: 'game_win'
-  post 'games/:id/loose', to: 'games#loose', as: 'game_loose'
+  get 'games/:id/win', to: 'games#win', as: 'game_win'
+  get 'games/:id/loose', to: 'games#loose', as: 'game_loose'
 
   resources :users
   get 'signup', to: "users#new"  # controller: :users, action: :new  
