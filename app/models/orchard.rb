@@ -14,7 +14,6 @@ class Orchard < ApplicationRecord
   end
 
   def empty?
-    puts "chek orchard empty and return #{fruits.on_tree == 0}"
     fruits.on_tree.count == 0
   end
 
