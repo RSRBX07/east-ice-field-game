@@ -18,11 +18,9 @@ class GamesController < ApplicationController
   def show
     begin
       @game = Game.find(params[:id])
-      puts "got game"
     rescue ActiveRecord::RecordNotFound => err
       redirect_to root_path, notice: t(:not_found, scope: [:activerecord, :exceptions])
     end
-    puts "leaving games#show"
   end
   
   def crop
@@ -74,11 +72,8 @@ class GamesController < ApplicationController
   end
 
   def win
-    #recherche du jeu
-
     @game.win
     @game.save!
-    #sauvegarder le jeu
     
     redirect_to  root_path
   end
