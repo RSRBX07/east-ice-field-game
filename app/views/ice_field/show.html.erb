@@ -1,2 +1,6 @@
-<h1>IceField#show</h1>
-<p>Find me in app/views/ice_field/show.html.erb</p>
+<% @game.animals.each do |animal| %>
+  <%= content_tag :div, animal.name, class: animal.name %>
+<% end %>
+
+<%= content_tag :div, @game.dice.showing_face, class: "dice" %>
+<%= button_to t(".button_dice"), roll_ice_field_dice_path %>

@@ -15,7 +15,7 @@ class IceFieldController < ApplicationController
     if @game.dice.save
       # on ne peut roller une 2eme fois que si ya eu action step ou crop
       set_last_player_action
-      redirect_to ice_field_game_path
+      redirect_to ice_field_game_path(@game)
     end
   end
 

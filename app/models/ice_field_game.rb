@@ -1,9 +1,9 @@
 class IceFieldGame < ApplicationRecord
-  ANIMALS = [:fox, :rabit, :bear, :pinguin]
+  ANIMALS = [:fox, :rabbit, :bear, :pinguin]
   DICE_FACES = [:melt, :bridge, :igloo]
   PLACES = [:ice_field, :bridge, :igloo]
-  has_one :dice, class: IceFieldDice
-  has_many :animals
+  has_one :dice, class_name: IceFieldDice
+  has_many :animals, autosave: true
   has_one :bridge
   before_create :setup_game
 
@@ -18,7 +18,7 @@ class IceFieldGame < ApplicationRecord
 
   def setup_game
     self.dice ||= IceFieldDice.new
-    ANIMALS.each do { |name| self.animals << Animal.new name: name }
+    ANIMALS.map { |name| self.animals.build(name: name) }
     self.bridge ||= Bridge.new
   end
 end
