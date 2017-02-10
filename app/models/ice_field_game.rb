@@ -1,0 +1,2 @@
+class IceFieldGame < ApplicationRecord
+end
