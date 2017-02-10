@@ -23,7 +23,7 @@
     <% if @game.dice.showing_face == "crow" %>
       <%= render 'crow' %>
     <% elsif @game.dice.showing_face == "basket" %>
-     <%= render 'basket' %>
+     <%= render 'basket'%>
     <% else %>
     <div id="fruits" class="<%= @game.dice.showing_face %>"></div>
     <% end %>
@@ -47,7 +47,7 @@
 <div class="row">
   <h2><%= t(".basket") %></h2>
   <div class="basket">
-    <% @game.fruits.on_basket.each do |fruit| %>
+    <% @game.fruits.on_basket.order(:croped_at).each do |fruit| %>
     <div class="fruits_basket">
       <div class="<%= fruit.color %>"></div>
       <div class="base"></div>
