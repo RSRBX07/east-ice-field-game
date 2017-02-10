@@ -1,14 +1,24 @@
 class IceFieldGame < ApplicationRecord
   ANIMALS = [:fox, :rabit, :bear, :pinguin]
   DICE_FACES = [:melt, :bridge, :igloo]
-  has_one :dice
+  PLACES = [:ice_field, :bridge, :igloo]
+  has_one :ice_field_dice
   has_many :animals
   has_one :bridge
-  before_create :set_game_elements
+  before_create :setup_game
+
+
+
+  def win
+    self.status = :win
+    self.finished_at = DateTime.now
+  end
 
   private
 
-  def set_game_elements
-    
+  def setup_game
+    self.ice_field_dice ||= IceFieldDice.new
+    ANIMALS.each do { |name| self.animals << Animal.new name: name }
+    self.bridge ||= Bridge.new
   end
 end
