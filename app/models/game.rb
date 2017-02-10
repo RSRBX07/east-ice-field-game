@@ -30,10 +30,7 @@ class Game < ApplicationRecord
   end
 
   def allow_roll?
-    !(last_player_action == "roll" && (dice.showing_face == "crow" || dice.showing_face == "basket")) && (
-    last_player_action != "roll" ||
-    # il n'ya plus de fruit de ca couleur de la face du dé
-    fruits.on_tree.of_color(dice.showing_face).count == 0)
+    (last_player_action != "roll" ) || ( dice.showing_color? && orchard.fruits_left?(dice.showing_face)) 
   end
 
   def allow_crop? fruit
@@ -41,9 +38,7 @@ class Game < ApplicationRecord
     dice.showing_face == fruit.color) &&
     last_player_action != "crop"
   end
-  false &&
-  false ||
-  true
+
   def win
     self.status = :win
     self.finished_at = DateTime.now
