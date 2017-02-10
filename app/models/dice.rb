@@ -5,6 +5,10 @@ class Dice < ApplicationRecord
     self.showing_face = faces.sample.to_s
   end
 
+  def showing_color?
+    Game::COLORS.include? showing_face.to_sym
+  end
+
   private
 
   def faces

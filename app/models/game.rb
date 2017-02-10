@@ -12,12 +12,16 @@ class Game < ApplicationRecord
   scope :of_user, ->(user) {user.games}
 
 
+  def allow_roll?
+    (last_player_action != "roll" ) || ( dice.showing_color? && orchard.fruits_left?(dice.showing_face)) 
+  end
+
   def allow_crop? fruit
-    dice.showing_face == "basket" ||
-    dice.showing_face == fruit.color &&
+    (dice.showing_face == "basket" ||
+    dice.showing_face == fruit.color) &&
     last_player_action != "crop"
   end
-  
+
   def win
     self.status = :win
     self.finished_at = DateTime.now
