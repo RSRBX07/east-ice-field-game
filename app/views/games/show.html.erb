@@ -1,4 +1,4 @@
-
+ 
 
 <p><%= notice %></p>
 
@@ -42,7 +42,9 @@
   </div>
   <i id=flag class="fa fa-flag-o fa-2x pull-left" aria-hidden="true"></i>
   <i id=flag class="fa fa-flag-checkered fa-2x pull-right" aria-hidden="true"></i>
-  <hr class="hr-dashed">
+  <% 6.times {%>
+     <div class='w15'>|</div>
+  <%}%>
   <%= button_to t(".button_crow"), step_crow_path %>
 </div>
 
