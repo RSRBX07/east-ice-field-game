@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   # crow game player actions
   post 'dice/:id', to: 'games#roll', as: 'roll_dice'
-  post 'games/:id/fruits/:fruit_id/crop', to: 'games#crop', as: 'crop_fruit'
+  get 'games/:id/fruits/:fruit_id/crop', to: 'games#crop', as: 'crop_fruit'
   post 'crow/:id/step', to: 'games#step', as: 'step_crow'
   get 'games/:id/win', to: 'games#win', as: 'game_win'
   get 'games/:id/loose', to: 'games#loose', as: 'game_loose'
