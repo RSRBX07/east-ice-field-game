@@ -89,7 +89,6 @@ class GamesController < ApplicationController
   def set_last_player_action
    @game.last_player_action = action_name
    @game.save
-   puts "last_player_action set to #{@game.last_player_action}"
   end
 
   def set_game

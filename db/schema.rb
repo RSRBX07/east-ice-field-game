@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170206112438) do
+ActiveRecord::Schema.define(version: 20170210143335) do
+
+  create_table "animals", force: :cascade do |t|
+    t.string   "name"
+    t.string   "place"
+    t.integer  "ice_field_game_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.index ["ice_field_game_id"], name: "index_animals_on_ice_field_game_id"
+  end
+
+  create_table "bridges", force: :cascade do |t|
+    t.integer  "pilars_count",      default: 6
+    t.integer  "ice_field_game_id"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.index ["ice_field_game_id"], name: "index_bridges_on_ice_field_game_id"
+  end
 
   create_table "crows", force: :cascade do |t|
     t.integer  "advancement", default: 0
@@ -47,6 +64,22 @@ ActiveRecord::Schema.define(version: 20170206112438) do
     t.integer  "game_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "ice_field_dices", force: :cascade do |t|
+    t.string   "showing_face"
+    t.integer  "ice_field_game_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.index ["ice_field_game_id"], name: "index_ice_field_dices_on_ice_field_game_id"
+  end
+
+  create_table "ice_field_games", force: :cascade do |t|
+    t.string   "status"
+    t.datetime "finished_at"
+    t.string   "last_player_action"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   create_table "orchards", force: :cascade do |t|

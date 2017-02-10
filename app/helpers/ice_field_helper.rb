@@ -1,0 +1,2 @@
+module IceFieldHelper
+end

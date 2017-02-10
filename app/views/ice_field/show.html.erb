@@ -1,0 +1,6 @@
+<% @game.animals.each do |animal| %>
+  <%= content_tag :div, animal.name, class: animal.name %>
+<% end %>
+
+<%= content_tag :div, @game.dice.showing_face, class: "dice" %>
+<%= button_to t(".button_dice"), roll_ice_field_dice_path %>
