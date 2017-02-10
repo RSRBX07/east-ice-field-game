@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
 
+  get 'ice_field/melt'
+
+  get 'ice_field/roll'
+
+  get 'ice_field/step'
+
+  get 'ice_field/show'
+
+  get 'ice_field/create'
+
   root 'games#index'
 
   # game actions
