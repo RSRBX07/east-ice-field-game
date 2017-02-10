@@ -1,3 +1,4 @@
+
 # GameHub (pedagogic repo)
 
 [![CircleCI](https://circleci.com/gh/RSRBX07/east-ice-field-game.svg?style=svg)](https://circleci.com/gh/RSRBX07/east-ice-field-game)
@@ -7,6 +8,7 @@
 
 Let's create a game like [Mon Premier Verger](https://cdn.haba.de/medias/manual/4655-mes-mon-premier-verger-fiche-jeu-fr.pdf)
 
+and an other like [Little Cooperation](http://www.djeco.com/data/rules/DJ08555_FR.pdf)
 
 Visible dans un premier temps sur [Heroku](https://ice-field.herokuapp.com/)
 
