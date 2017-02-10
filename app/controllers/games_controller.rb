@@ -31,8 +31,8 @@ class GamesController < ApplicationController
       fruit.crop
       if fruit.save
         set_last_player_action
-        redirect_to game_path(@game) if !@game.orchard.empty?
-        redirect_to game_win_path @game if @game.orchard.empty?
+        redirect_to game_path(@game) if !@game.orchard.fruits_left?
+        redirect_to game_win_path @game if @game.orchard.fruits_left?
       else
         redirect_to game_path(@game), notice: "#{fruit.errors.messages}"
       end
